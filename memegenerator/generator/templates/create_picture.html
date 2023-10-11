@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload picture</title>
+    <link rel="stylesheet" type='text/css' href="{% static 'upload_styles.css' %}">
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h1>Upload your picture to make a meme</h1>
+        {% if form.errors %}
+            <div class="error-message">
+                <p>Please correct the following errors:</p>
+                <ul>
+                    {% for field, errors in form.errors.items %}
+                        {% for error in errors %}
+                            <li>{{ field }} - {{error}}</li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        <label for="description">Надпись:</label>
+        <input type="text" id="description" name="description" required>
+        <label for="picture">Выберите файл:</label>
+        <input type="file" id="picture" name="picture" required>
+        <button type="submit">Upload</button>
+        <a href="/pictures/">
+            <button type="button" style="float: right;" >Back to List</button>
+        </a>
+
+    </form>
+</body>
+</html>

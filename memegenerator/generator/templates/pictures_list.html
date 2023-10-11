@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Page</title>
+    <link rel="stylesheet" type='text/css' href="{% static 'list_styles.css' %}">
+</head>
+<body>
+    <div id="list-container">
+        <h1>Pictures List</h1>
+            <center><a href="upload" style="font-size:14px;"  >Upload a new picture</a></center>
+            <hr> <hr>
+        {% for item in p_list %}
+            <h3>{{ item.date }}</h3>
+            <p></p>
+            <p>{{ item.description }}</p>
+            {% if item.picture %}
+                <img src="{{ item.picture.url }}" alt="{{ item.name }} Picture" style="width: 200px; height: 150px;">
+            {% endif %}
+
+            <p></p>
+            <a href="detail/{{item.pk}}">
+            <button type="submit">Details</button>
+            </a>
+            <p></p>
+            <hr>
+        {% endfor %}
+    </div>
+</body>
+</html>

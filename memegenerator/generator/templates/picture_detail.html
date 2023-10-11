@@ -1,0 +1,28 @@
+
+<!-- detail_page.html -->
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'detail_styles.css' %}">
+</head>
+<body>
+    <div id="detail-container">
+        <h1>Picture Details:</h1>
+        <p><strong>id:</strong> {{ picture_detail.pk }}</p>
+        <p><strong>Uploaded:</strong> {{ picture_detail.date }}</p>
+        <p><strong>Uploaded by:</strong> {{ picture_detail.user.username }}</p>
+        <p><strong>Description:</strong>{{ picture_detail.description }}</p>
+        {% if picture_detail.picture %}
+                <img src="{{ picture_detail.picture.url }}" alt="{{ picture_detail.name }} Picture" style="width: 200px; height: 150px;">
+            {% endif %}
+        <p></p>
+        <a href="/pictures/">
+            <button type="button">Back to List</button>
+        </a>
+    </div>
+
+</body>
+</html>

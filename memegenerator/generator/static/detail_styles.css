@@ -1,0 +1,53 @@
+/* detail_styles.css */
+
+button {
+    background-color: #4285f4; /* Google Blue color */
+    color: #fff; /* White text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #357ae8; /* Slightly darker blue on hover */
+}
+
+body {
+    background-color: #f3f6e4; /* Light green background color */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#detail-container {
+    background-color: #fff; /* White background color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 400px;
+}
+
+h1 {
+    text-align: center;
+    color: #4285f4; /* Google Blue color */
+}
+
+p {
+    color: #333; /* Dark text color */
+    margin: 10px 0;
+}
+
+a {
+    color: #4285f4; /* Google Blue color */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
